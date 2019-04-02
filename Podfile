@@ -14,7 +14,7 @@ target 'Mixin' do
   pod 'SnapKit'
   pod 'SocketRocket', :git => 'git@github.com:over140/SocketRocket.git', :branch => 'feature/request'
   pod 'PhoneNumberKit'
-  pod 'GzipSwift'
+  pod 'DataCompression'
   pod 'RSKImageCropper'
   pod 'DeviceGuru'
   pod 'JWT', '~> 3.0.0-beta.7'

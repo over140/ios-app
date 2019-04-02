@@ -3,6 +3,7 @@ PODS:
   - AlignedCollectionViewFlowLayout (1.1.2)
   - Base64 (1.1.2)
   - Bugsnag (5.19.1)
+  - DataCompression (3.4.0)
   - DeviceGuru (5.1.2)
   - Firebase/Analytics (5.20.1):
     - Firebase/Core
@@ -53,7 +54,6 @@ PODS:
   - GoogleUtilities/UserDefaults (5.5.0):
     - GoogleUtilities/Logger
   - GoogleWebRTC (1.1.27299)
-  - GzipSwift (4.1.0)
   - JWT (3.0.0-beta.11):
     - Base64 (~> 1.1.2)
   - nanopb (0.3.901):
@@ -93,12 +93,12 @@ DEPENDENCIES:
   - Alamofire
   - AlignedCollectionViewFlowLayout
   - Bugsnag
+  - DataCompression
   - DeviceGuru
   - Firebase/Analytics
   - Firebase/Core
   - GiphyCoreSDK
   - GoogleWebRTC
-  - GzipSwift
   - JWT (~> 3.0.0-beta.7)
   - PhoneNumberKit
   - R.swift
@@ -117,6 +117,7 @@ SPEC REPOS:
     - AlignedCollectionViewFlowLayout
     - Base64
     - Bugsnag
+    - DataCompression
     - DeviceGuru
     - Firebase
     - FirebaseAnalytics
@@ -126,7 +127,6 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - GoogleWebRTC
-    - GzipSwift
     - JWT
     - nanopb
     - PhoneNumberKit
@@ -169,6 +169,7 @@ SPEC CHECKSUMS:
   AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
   Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
   Bugsnag: 96c6dff50bd5ca461603a7aaf22b8406c4fb32ca
+  DataCompression: bd62a636afc19d8582b1772b136b772345a22f95
   DeviceGuru: 65a794c0c5b4f600453bcfaf94c78fea66ba577e
   Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
@@ -178,7 +179,6 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   GoogleWebRTC: 893a5f2f3635437ec3b05ef240993d5713307804
-  GzipSwift: df1636fa095bd8f21d98db14e7393ecc9e230fed
   JWT: 05028b9624591bba9681bb57df2c5f95fa258bad
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PhoneNumberKit: 167ee1f0bbb6efce7c62559e620eae745595532f
@@ -196,6 +196,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: a98782deaef81b23ae0fa88ecd1968501b1e742c
+PODFILE CHECKSUM: 4fb14a11a2595a1c4b3f6d9dfa62588358608ae2
 
 COCOAPODS: 1.6.1

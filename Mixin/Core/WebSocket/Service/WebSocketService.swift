@@ -1,6 +1,6 @@
 import Foundation
 import SocketRocket
-import Gzip
+import DataCompression
 import Bugsnag
 import Alamofire
 
@@ -70,11 +70,11 @@ extension WebSocketService {
         guard let websocket = self.client, websocket.readyState == .OPEN else {
             return false
         }
-        guard let jsonData = try? jsonEncoder.encode(message), let gzipData = try? jsonData.gzipped() else {
+        guard let jsonData = try? jsonEncoder.encode(message), let gzipped = jsonData.gzip() else {
             return false
         }
 
-        websocket.send(gzipData)
+        websocket.send(gzipped)
         return true
     }
 }
@@ -82,11 +82,11 @@ extension WebSocketService {
 extension WebSocketService: SRWebSocketDelegate {
 
     func webSocket(_ webSocket: SRWebSocket!, didReceiveMessage message: Any!) {
-        guard let data = message as? Data, data.isGzipped, let unzipJson = try? data.gunzipped() else {
+        guard let data = message as? Data, let json = data.gunzip() else {
             return
         }
-        guard let blazeMessage = (try? jsonDecoder.decode(BlazeMessage.self, from: unzipJson)) else {
-            UIApplication.trackError("WebSocketService", action: "didReceiveMessage", userInfo: ["data": String(data: unzipJson, encoding: .utf8) ?? ""])
+        guard let blazeMessage = (try? jsonDecoder.decode(BlazeMessage.self, from: json)) else {
+            UIApplication.trackError("WebSocketService", action: "didReceiveMessage", userInfo: ["data": String(data: json, encoding: .utf8) ?? ""])
             return
         }
 
@@ -108,7 +108,7 @@ extension WebSocketService: SRWebSocketDelegate {
 
             if blazeMessage.data != nil {
                 if blazeMessage.isReceiveMessageAction() {
-                    ReceiveMessageService.shared.receiveMessage(blazeMessage: blazeMessage, rawData: unzipJson)
+                    ReceiveMessageService.shared.receiveMessage(blazeMessage: blazeMessage, rawData: json)
                 } else {
                     guard let data = blazeMessage.toBlazeMessageData() else {
                         return
